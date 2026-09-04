@@ -3,8 +3,6 @@
 
 import SwiftUI
 
-// MARK: - Detail view models
-
 struct CostByModelViewModel {
   struct Slice: Identifiable {
     let name: String
@@ -20,7 +18,6 @@ struct CostByModelViewModel {
   let slices: [Slice]
   var sliceNames: [String] { slices.map(\.name) }
   
-  //1. Cost by Model Graph
   init(store: ModelCostStore = ModelCostStore()) {
     periodLine = DashboardStartDate.today.formatted(.dateTime.month(.wide).year()) + " · Month to date"
     totalDisplay = KPIFormat.currencyShort(store.monthToDateSpend)

@@ -4,8 +4,6 @@
 import SwiftUI
 import Charts
 
-// MARK: - Detail screen · tokens vs. outcomes
-
 struct TokensOutcomesView: View {
   private let tokensOutcomesViewModel = TokensOutcomesViewModel()
 

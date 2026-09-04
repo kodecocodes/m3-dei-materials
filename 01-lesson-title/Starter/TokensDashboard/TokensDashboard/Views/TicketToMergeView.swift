@@ -4,8 +4,6 @@
 import SwiftUI
 import Charts
 
-// MARK: - Detail screen · Ticket to Merge Days
-
 struct TicketToMergeView: View {
   private let ticketToMergeViewModel = TicketToMergeViewModel()
   

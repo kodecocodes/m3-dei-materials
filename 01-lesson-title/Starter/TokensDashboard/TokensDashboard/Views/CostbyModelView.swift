@@ -4,8 +4,6 @@
 import SwiftUI
 import Charts
 
-// MARK: - Detail screen · cost by model
-
 struct CostbyModelView: View {
   private let costByModelViewModel = CostByModelViewModel()
 

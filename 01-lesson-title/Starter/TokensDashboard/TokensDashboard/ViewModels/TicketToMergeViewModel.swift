@@ -3,8 +3,6 @@
 
 import SwiftUI
 
-// MARK: - Detail view models
-
 struct TicketToMergeViewModel {
   struct Point: Identifiable {
     let month: Date
@@ -17,22 +15,16 @@ struct TicketToMergeViewModel {
   let periodLine: String
   let subtitleLine = "Avg days from ticket to merge · lower is better"
   let points: [Point]
-  /// Legend/color-scale order: heavy AI first, matching `ColorStyles` usage.
   let cohortNames: [String]
-  /// Y-axis range anchored at zero so improvements read against the full scale.
   let daysDomain: ClosedRange<Double>
   
   let xAxisCaption = "Month"
   let yAxisCaption = "Days"
   
-  /// Headline stats shared with the summary insight.
   let latestAIHeavyDays: Double
-  /// Fraction the heavy cohort improved from the first to the latest month (+0.38 == 38% faster).
   let heavyAIImprovement: Double
-  /// How many days ahead of the light cohort the heavy cohort is in the latest month.
   let latestGapDays: Double
   
-  // 3. Ticket to Merge Time Graph
   init(store: TicketToMergeStore = TicketToMergeStore()) {
     periodLine = DashboardStartDate.today.formatted(.dateTime.month(.wide).year()) + " · Trailing 5 months"
     
@@ -60,7 +52,6 @@ struct TicketToMergeViewModel {
     latestGapDays = lastAILight - lastAIHeavy
   }
   
-  /// "3.8" — day counts read best with at most one decimal.
   static func days(_ value: Double) -> String {
     value.formatted(.number.precision(.fractionLength(0...1)))
   }

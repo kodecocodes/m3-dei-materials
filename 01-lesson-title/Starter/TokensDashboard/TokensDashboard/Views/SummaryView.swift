@@ -3,9 +3,6 @@
 
 import SwiftUI
 
-// MARK: - Summary view model (narrative brief)
-
-/// The detail graph screen an insight on the summary drills into.
 enum DestinationGraph: Hashable {
   case costByModel
   case tokensVsOutcomes
@@ -37,7 +34,7 @@ struct SummaryView: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 0) {
-        Heading(title: "Token's Dashboard Summary", subtitle: summaryViewModel.dateLine)
+        Heading(title: "Tokens Dashboard Summary", subtitle: summaryViewModel.dateLine)
         ForEach(summaryViewModel.insights) { insight in
           NavigationLink(value: insight.destination) {
             InsightRow(insight: insight)
@@ -60,8 +57,6 @@ struct SummaryView: View {
     }
   }
 }
-
-// Caution: This is AI-generated code.
 
 private struct InsightRow: View {
   let insight: SummaryViewModel.Insight
@@ -87,8 +82,6 @@ private struct InsightRow: View {
     .accessibilityLabel("\(insight.headline) \(insight.detail)")
   }
 }
-
-// MARK: - Previews
 
 #Preview("Summary") {
   NavigationStack {

@@ -3,10 +3,6 @@
 
 import SwiftUI
 
-// MARK: - Design
-// Light, editorial minimalism: serif numerals, hairline dividers, a single
-// indigo accent. The summary reads as a narrative brief and drills into one graph screen: cost by model.
-
 enum ColorStyles {
   static let shades: [Color] = [
     .indigo,

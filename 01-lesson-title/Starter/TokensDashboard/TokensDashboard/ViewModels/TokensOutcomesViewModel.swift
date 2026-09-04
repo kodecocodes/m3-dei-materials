@@ -3,30 +3,22 @@
 
 import Foundation
 
-// MARK: - Detail view models
-
 struct TokensOutcomesViewModel {
   struct Point: Identifiable {
     let name: String
     let tokensMillions: Double
     let mergedPRs: Int
-    /// Above-median tokens with below-median merged PRs — the
-    /// bottom-right quadrant of the chart.
     let needsCoaching: Bool
     let detailDisplay: String
-    /// Human-readable quadrant label used for accessibility and coaching context.
     let quadrantLabel: String
     var id: String { name }
   }
   
   let periodLine: String
   let points: [Point]
-  /// Dashed guide positions splitting the chart into quadrants.
   let medianTokensMillions: Double
   let medianPRs: Double
-  /// X-axis range anchored at zero with padding so dots don't clip at the right edge.
   let tokensDomain: ClosedRange<Double>
-  /// Y-axis range anchored at zero with headroom so top annotations don't clip.
   let prsDomain: ClosedRange<Double>
   
   let xAxisCaption = "Tokens consumed (millions)"
@@ -42,11 +34,9 @@ struct TokensOutcomesViewModel {
     medianPRs = medianMerged
     
     let maxTokensMillions = outcomes.map { $0.tokens / 1e6 }.max() ?? 0
-    // 8% right padding prevents the rightmost dot and its annotation from clipping.
     tokensDomain = 0...max(1.0, (maxTokensMillions * 1.08).rounded(.up))
     
     let maxPRs = outcomes.map { Double($0.mergedPRs) }.max() ?? 0
-    // 15% top padding prevents the topmost dot's name annotation from clipping.
     prsDomain = 0...max(1.0, (maxPRs * 1.15).rounded(.up))
     
     points = outcomes.map { developer in

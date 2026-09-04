@@ -3,21 +3,14 @@
 
 import Foundation
 
-/// Month-to-date cost attributed to a single LLM.
 struct ModelCost: Identifiable {
   let name: String
   let cost: Double
   let tokens: Double
-  /// Month-over-month change as a fraction (+0.18 == up 18%).
   let change: Double
   var id: String { name }
 }
 
-// MARK: - Data source
-/// Source of truth for the cost-by-model graph: fixed mock data as of
-/// May 1, 2026 (`DashboardStartDate.today`), so every screen shows the same
-/// numbers and previews render identically on every run.
-///
 struct ModelCostStore {
   let modelCosts: [ModelCost] = [
     ModelCost(name: "Claude Opus 4.8", cost: 85_700, tokens: 9.8e9,  change: 0.18),

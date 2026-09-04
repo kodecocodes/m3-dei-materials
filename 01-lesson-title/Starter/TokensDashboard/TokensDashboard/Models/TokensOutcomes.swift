@@ -1,25 +1,13 @@
 /// Copyright (c) 2026 Kodeco Inc. See COPYRIGHT for details.
 /// Caution: This is AI-generated code.
 
-// MARK: - Model layer
-
-/// Month-to-date productivity for a single developer: tokens consumed
-/// against pull requests merged.
-
 struct DeveloperOutcome: Identifiable {
   let name: String
-  /// Tokens consumed this month.
   let tokens: Double
-  /// Pull requests merged this month.
   let mergedPRs: Int
-  
   var id: String { name }
 }
 
-// MARK: - Data source
-
-/// Source of truth for the tokens-vs-outcomes graph: fixed mock data as of
-/// May 1, 2026 (`DashboardStartDate.today`).
 struct DeveloperOutcomeStore {
   let developerOutcomes: [DeveloperOutcome] = [
     DeveloperOutcome(name: "Priya",  tokens: 8.2e6, mergedPRs: 24),

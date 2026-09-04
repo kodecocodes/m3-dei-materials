@@ -14,7 +14,6 @@ struct SummaryViewModel {
   let dateLine: String
   let insights: [Insight]
   
-  // 1. Cost by Model Graph
   init(costStore: ModelCostStore = ModelCostStore(), outcomeStore: DeveloperOutcomeStore = DeveloperOutcomeStore(), ticketToMergeStore: TicketToMergeStore = TicketToMergeStore()) {
     dateLine = DashboardStartDate.today.formatted(date: .long, time: .omitted)
     
@@ -29,7 +28,6 @@ struct SummaryViewModel {
       ))
     }
     
-    // 2. Tokens vs. Outcomes Graph
     let rankedByPRs = outcomeStore.developerOutcomes.sorted { $0.mergedPRs > $1.mergedPRs }
     let totalMergedPRs = outcomeStore.developerOutcomes.reduce(0) { $0 + $1.mergedPRs }
     if let topPerformer = rankedByPRs.first {
@@ -41,7 +39,6 @@ struct SummaryViewModel {
       ))
     }
     
-    // 3. Ticket to Merge Graph
     let heavyAISeries = ticketToMergeStore.samples
       .filter { $0.cohort == .heavyUsers }
       .sorted { $0.month < $1.month }

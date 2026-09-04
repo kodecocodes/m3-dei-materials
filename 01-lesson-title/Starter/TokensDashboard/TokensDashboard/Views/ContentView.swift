@@ -11,7 +11,6 @@ import SwiftUI
   }
 }
 
-/// Root of the app: the summary brief, drilling into the cost-by-model graph.
 struct ContentView: View {
   var body: some View {
     NavigationStack {

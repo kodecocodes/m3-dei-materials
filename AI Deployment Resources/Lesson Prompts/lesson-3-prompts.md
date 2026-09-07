@@ -1,8 +1,8 @@
 # Lesson 3 Prompts: Synthesize Launch Feedback
 
-Use these two prompts with the supplied `launch-feedback-dataset.md`.
+Use these two prompts with the supplied `launch-feedback-dataset.md`. The student materials also include a completed `launch-feedback-analysis.md` so you can follow along with Prompt 2 without first generating your own analysis.
 
-Prompt 1 creates the initial evidence-backed analysis. Verify a few cited record IDs and request any corrections in the same conversation. Then start a fresh conversation for Prompt 2. The second prompt challenges the analysis, pauses for your priority decisions, and creates both final files after you respond.
+Prompt 1 creates the initial evidence-backed analysis. Verify a few cited record IDs and request any corrections in the same conversation. You may use that result or the supplied completed sample. Then start a fresh conversation for Prompt 2. The second prompt challenges the analysis, pauses for your priority decisions, and creates both final files after you respond.
 
 ## Prompt 1: Create an Evidence-Backed Feedback Analysis
 

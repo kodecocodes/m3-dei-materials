@@ -1,14 +1,8 @@
 # Lesson 1 Prompts: Prepare Landing Page and Privacy Materials
 
-Use these prompts during Lesson 1 after completing `app-facts.md` from the supplied template.
+Use these two prompts during Lesson 1 after completing `app-facts.md` from the supplied template.
 
-## Prompting note
-
-These prompts are intentionally detailed. Launch copy becomes unreliable when AI receives only a product name and a vague feature summary.
-
-You can use the prompts with any capable AI assistant that accepts text or Markdown. If your tool supports file attachments, attach the requested files. Otherwise, paste their contents where shown.
-
-AI output is a draft, not evidence. Unknown facts must remain unresolved until a human owner confirms them.
+Prompt 1 creates the initial launch materials. Review the response and request any immediate corrections in the same conversation. Then start a fresh conversation for Prompt 2. The second prompt audits the drafts, pauses for your decisions, and creates the final files after you respond.
 
 ## Prompt 1: Draft the Launch Foundation
 
@@ -28,9 +22,9 @@ Rules:
 - Keep privacy language factual and plain. Do not claim legal compliance or present the draft as legal advice.
 - If required information is missing, list it under Open questions instead of guessing.
 
-Return two separate Markdown drafts.
+Create two separate Markdown drafts.
 
-Draft 1: landing-page-copy.md
+File 1: landing-page-copy.md
 
 Use this structure:
 1. Page goal and audience
@@ -43,7 +37,7 @@ Use this structure:
 8. Claims-to-facts review table
 9. Open questions
 
-Draft 2: privacy-and-support-draft.md
+File 2: privacy-and-support-draft.md
 
 Use this structure:
 1. Draft status notice
@@ -58,11 +52,13 @@ Use this structure:
 10. Information requiring owner or legal review
 
 If a section cannot be completed from verified facts, say what is missing. Do not fill the gap with generic policy language.
+
+If your environment supports file creation, create or update both named files. Otherwise, return their complete Markdown contents with the filename before each draft.
 ```
 
-## Prompt 2: Audit the Launch Materials
+## Prompt 2: Audit and Finalize the Launch Materials
 
-Run this prompt in a fresh AI context when possible.
+Run this prompt in a fresh AI conversation when possible.
 
 ```text
 Review these launch materials as a skeptical product, privacy, and support reviewer.
@@ -89,26 +85,21 @@ Check for:
 - Personal or unsafe information in proposed screenshots
 - Language that sounds legally final when the artifact is still a draft
 
-Return:
+First, return a concise review with:
+1. Must-fix findings
+2. Items to verify with an owner
+3. Optional improvements
+4. Supported claims worth keeping
 
-## Must fix
-- Finding
-- Affected section
-- Fact or missing evidence
-- Recommended change
+For every finding, explain the evidence and recommended change. Then ask me which findings I accept, reject, want revised, or want left open. Stop and wait for my response.
 
-## Verify with an owner
-- Question
-- Why AI cannot answer it
-- Suggested owner
+After I respond:
+- Apply only the findings I accepted.
+- Follow any revisions I requested.
+- Do not apply rejected suggestions.
+- Keep unresolved owner or legal questions visibly open.
+- Preserve supported claims and their fact IDs.
+- Create the complete final `landing-page-copy.md` and `privacy-and-support-draft.md` files.
 
-## Optional improvements
-- Suggestion
-- Why it is optional
-
-## Supported claims worth keeping
-- Claim
-- Supporting fact IDs
-
-Do not rewrite the drafts. The human reviewer will decide what to accept, reject, verify, or defer.
+If your environment supports file creation, create or update both named files. Otherwise, return only their complete Markdown contents with the filename before each file.
 ```

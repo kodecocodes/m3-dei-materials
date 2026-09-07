@@ -1,12 +1,8 @@
 # Lesson 3 Prompts: Synthesize Launch Feedback
 
-Use these prompts with the supplied `launch-feedback-dataset.md`.
+Use these two prompts with the supplied `launch-feedback-dataset.md`.
 
-## Prompting note
-
-The dataset is fictional, but the review habits are real. AI should organize evidence, not turn every comment into a product requirement.
-
-Every meaningful conclusion must cite feedback record IDs. A confident summary without traceable evidence is not ready for prioritization.
+Prompt 1 creates the initial evidence-backed analysis. Verify a few cited record IDs and request any corrections in the same conversation. Then start a fresh conversation for Prompt 2. The second prompt challenges the analysis, pauses for your priority decisions, and creates both final files after you respond.
 
 ## Prompt 1: Create an Evidence-Backed Feedback Analysis
 
@@ -41,7 +37,7 @@ Rules:
 - Do not recommend individual employee scoring as an automatic next step.
 - State when the supplied evidence cannot answer a question.
 
-Return launch-feedback-analysis.md with:
+Create `launch-feedback-analysis.md` with:
 1. Dataset scope and limitations
 2. Executive summary
 3. Findings grouped by classification
@@ -60,14 +56,16 @@ Return launch-feedback-analysis.md with:
 7. Open questions
 
 Do not create the final roadmap. Produce the evidence review first.
+
+If your environment supports file creation, create or update `launch-feedback-analysis.md`. Otherwise, return only its complete Markdown content without introductory commentary.
 ```
 
-## Prompt 2: Challenge the Analysis and Propose Triage Options
+## Prompt 2: Challenge, Decide, and Finalize
 
-Run this prompt in a fresh AI context when possible.
+Run this prompt in a fresh AI conversation when possible.
 
 ```text
-Review this early-launch analysis adversarially, then propose triage options for human review.
+Review this early-launch analysis adversarially and propose triage options for human review.
 
 Original dataset:
 [Attach or paste launch-feedback-dataset.md]
@@ -75,7 +73,7 @@ Original dataset:
 Draft analysis:
 [Attach or paste launch-feedback-analysis.md]
 
-First, check for:
+Check for:
 - Conclusions without supporting record IDs
 - Record IDs that do not support the conclusion
 - Bugs, feature requests, and messaging issues classified incorrectly
@@ -87,19 +85,13 @@ First, check for:
 - Conclusions drawn from analytics that the dataset says are unavailable
 - Priority recommendations based on invented frequency, impact, or effort
 
-Then return prioritized-launch-actions.md with two sections.
-
-Section 1: Review findings
-
-For each issue include:
+First, return a concise adversarial review. For each issue include:
 - Finding
 - Record IDs checked
 - Why it matters
 - Recommended correction
 
-Section 2: Proposed triage options
-
-For each well-supported finding include:
+Then propose triage options for each well-supported finding:
 - Finding
 - Classification
 - Supporting record IDs
@@ -109,5 +101,26 @@ For each well-supported finding include:
 - Effort or dependency that still needs human estimation
 - Risk of acting too quickly
 
-Do not make the final roadmap decision. Clearly label the actions as recommendations for a human reviewer.
+Ask me which corrections and actions I accept, reject, want revised, or want deferred. Stop and wait for my response.
+
+After I respond:
+- Apply only the corrections I accepted to the analysis.
+- Follow my priority decisions instead of treating the AI ranking as final.
+- Do not reintroduce rejected recommendations.
+- Preserve contradictory evidence and unresolved questions.
+- Do not invent frequency, impact, effort, analytics, or business context.
+- Create the complete final `launch-feedback-analysis.md` and `prioritized-launch-actions.md` files.
+
+The final action file must include:
+1. Fix now
+2. Investigate
+3. Clarify messaging
+4. Add to backlog
+5. Defer
+6. Reject or ignore
+7. Open questions and dependencies
+
+For every action, include the supporting record IDs, evidence-based reason, confidence, and human decision.
+
+If your environment supports file creation, create or update both named files. Otherwise, return only their complete Markdown contents with the filename before each file.
 ```

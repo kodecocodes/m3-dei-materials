@@ -1,12 +1,10 @@
 # Lesson 2 Prompts: Prepare the App Store Listing
 
-Use these prompts during Lesson 2. Start with the approved `app-facts.md` and reviewed `landing-page-copy.md` from Lesson 1.
+Use these two prompts during Lesson 2. Start with the approved `app-facts.md` and reviewed `landing-page-copy.md` from Lesson 1.
 
-## Prompting note
+Prompt 1 creates the initial App Store package. Review the options, tell the AI which subtitle and promotional text you prefer, and request any immediate corrections in the same conversation. Then start a fresh conversation for Prompt 2. The second prompt reviews the package, pauses for your decisions, and creates the final files after you respond.
 
-App Store copy has tighter fields than a landing page. The goal is not to squeeze every product fact into every field. Give each field one clear job, compare options, and verify important claims against the fact IDs.
-
-The field limits used in the lesson reflect the course's current production date. Check Apple's current requirements before using the package for a real submission.
+The field limits used in this lesson reflect the course's production date. Check Apple's current requirements before using the package for a real submission.
 
 ## Prompt 1: Draft the App Store Copy Package
 
@@ -38,7 +36,7 @@ Rules:
 - Keep screenshot captions tied to real screens in the screenshot inventory.
 - Report character counts for text fields and the UTF-8 byte count for the keyword field.
 
-Return app-store-copy-package.md with:
+Create `app-store-copy-package.md` with:
 1. Approved app name
 2. Three subtitle options with counts
 3. Three promotional-text options with counts
@@ -50,7 +48,7 @@ Return app-store-copy-package.md with:
 9. Claims-to-facts review table
 10. Open questions
 
-Then return app-store-screenshot-plan.md with:
+Create `app-store-screenshot-plan.md` with:
 1. Screenshot goal
 2. Ordered screenshot sequence
 3. Real screen or workflow for each screenshot
@@ -60,11 +58,13 @@ Then return app-store-screenshot-plan.md with:
 7. Capture or design notes
 
 Recommend one subtitle and promotional-text option, but explain the tradeoff. The human developer makes the final choice.
+
+If your environment supports file creation, create or update both named files. Otherwise, return their complete Markdown contents with the filename before each file.
 ```
 
-## Prompt 2: Review First-Release Readiness
+## Prompt 2: Review and Finalize First-Release Materials
 
-Run this prompt in a fresh AI context when possible.
+Run this prompt in a fresh AI conversation when possible.
 
 ```text
 Review this App Store package for accuracy and first-release readiness.
@@ -98,7 +98,25 @@ Review for:
 - Personal, confidential, or unsafe sample information
 - Missing support, marketing, or privacy information that requires human confirmation
 
-Return a draft release-readiness-checklist.md with:
+First, return a concise review with:
+1. Must-fix findings
+2. Items requiring human confirmation
+3. Optional improvements
+4. Supported content worth keeping
+5. A draft readiness status
+
+For every finding, explain the evidence and recommended change. Then ask me which findings I accept, reject, want revised, or want left open. Stop and wait for my response.
+
+After I respond:
+- Apply only the findings I accepted.
+- Follow my selected subtitle and promotional-text choices.
+- Follow any revisions I requested.
+- Do not apply rejected suggestions.
+- Keep unresolved owner questions visibly open.
+- Recalculate every character and UTF-8 byte count.
+- Create the complete final `app-store-copy-package.md`, `app-store-screenshot-plan.md`, and `release-readiness-checklist.md` files.
+
+The final readiness checklist must use checkboxes and include:
 1. Source-fact checks
 2. Required and applicable field checks
 3. Field-count checks
@@ -106,13 +124,11 @@ Return a draft release-readiness-checklist.md with:
 5. Copy and keyword checks
 6. Screenshot accuracy and safe-data checks
 7. Support, marketing, and privacy URL checks
-8. Must-fix findings
-9. Items to verify with a human owner
-10. Optional improvements
-11. Supported content worth keeping
-12. Final status: Ready for final human review, Ready with open questions, or Not ready
+8. Remaining must-fix findings
+9. Items still requiring a human owner
+10. Final status: Ready for final human review, Ready with open questions, or Not ready
 
-Use checkboxes for the readiness checks. Leave a checkbox unchecked when the supplied artifacts do not prove that it passes.
+Leave a checkbox unchecked when the supplied artifacts do not prove that it passes.
 
-Do not rewrite the package until the human reviewer accepts the findings.
+If your environment supports file creation, create or update all three named files. Otherwise, return only their complete Markdown contents with the filename before each file.
 ```

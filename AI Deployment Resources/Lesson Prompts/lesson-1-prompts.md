@@ -1,6 +1,6 @@
 # Lesson 1 Prompts: Prepare Landing Page and Privacy Materials
 
-Use these two prompts during Lesson 1 after completing `app-facts.md` from the supplied template.
+Use these two prompts during Lesson 1 with the supplied completed `app-facts.md`. You can also create your own version from `app-facts-template.md` when applying the workflow to another app.
 
 Prompt 1 creates the initial launch materials. Review the response and request any immediate corrections in the same conversation. Then start a fresh conversation for Prompt 2. The second prompt audits the drafts, pauses for your decisions, and creates the final files after you respond.
 

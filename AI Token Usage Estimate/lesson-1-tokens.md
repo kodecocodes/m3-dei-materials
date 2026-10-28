@@ -14,7 +14,7 @@ The estimated costs are for GPT-5.6 Terra model. Costs will vary depending on th
 
 ## Estimated turn totals
 
-| Lesson interaction | Input | Output | Total Tokens |
+| Lesson interaction | Input | Output | Estimated Totals |
 | --- | ---: | ---: | ---: |
 | Launch-materials audit | 625 | 1,000 | 1,625 |
 | Token-record request and save | 135 | 140 | 275 |

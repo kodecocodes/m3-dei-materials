@@ -16,7 +16,7 @@ The format and estimating approach match the earlier **Launch-materials audit** 
 
 ## Estimated turn totals
 
-| Lesson interaction | Input | Output | Total |
+| Lesson interaction | Input | Output | Estimated Totals |
 | --- | ---: | ---: | ---: |
 | Evidence-backed launch-feedback analysis | 480 | 850 | 1,330 |
 | Adversarial analysis review and triage options | 480 | 720 | 1,200 |

@@ -16,11 +16,11 @@ The format and estimating approach match the earlier **Feature Development Plan*
 
 ## Estimated turn totals
 
-| Lesson interaction | Input | Output | Total |
+| Lesson interaction | Input | Output | Estimated Totals |
 | --- | ---: | ---: | ---: |
 | App Store package review | 470 | 585 | 1,055 |
 | Owner-directed final package creation | 50 | 110 | 160 |
 | Initial token-record request | 25 | 30 | 55 |
 | Token-record clarification, source review, and save | 105 | 155 | 260 |
 | **Estimated total tokens** | **650** | **880** | **1,530** |
-| **Estimated total cost** |  |  | **~$0.01~** |
+| **Estimated total cost** |  |  | **~$0.01** |

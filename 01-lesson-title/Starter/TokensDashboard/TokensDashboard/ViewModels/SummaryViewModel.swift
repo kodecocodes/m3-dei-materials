@@ -54,6 +54,13 @@ struct SummaryViewModel {
         destination: .ticketToMerge
       ))
     }
+
+    built.append(Insight(
+      headline: "AI Usage Insights",
+      detail: "Review aggregate team AI usage patterns.",
+      destination: .usageInsights
+    ))
+    
     insights = built
   }
 }

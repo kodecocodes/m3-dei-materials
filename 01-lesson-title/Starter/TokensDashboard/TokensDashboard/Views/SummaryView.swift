@@ -7,6 +7,7 @@ enum DestinationGraph: Hashable {
   case costByModel
   case tokensVsOutcomes
   case ticketToMerge
+  case usageInsights
 }
 
 private struct Heading: View {
@@ -25,8 +26,6 @@ private struct Heading: View {
     .frame(maxWidth: .infinity, alignment: .leading)
   }
 }
-
-// MARK: - Summary screen (narrative brief)
 
 struct SummaryView: View {
   private let summaryViewModel = SummaryViewModel()
@@ -53,6 +52,7 @@ struct SummaryView: View {
       case .costByModel: CostbyModelView()
       case .tokensVsOutcomes: TokensOutcomesView()
       case .ticketToMerge: TicketToMergeView()
+      case .usageInsights: UsageInsightsView()
       }
     }
   }
